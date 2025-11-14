@@ -355,20 +355,19 @@ def main():
         portioner = generera_portioner()
         instruktioner = generera_instruktioner(ingredienser)
 
-        st.markdown("<div class='recept-kort'>", unsafe_allow_html=True)
+        # Ingen extra vit ruta – bara vanlig layout
         st.markdown(f"### {recept_namn}")
         st.markdown(f"*Ca {portioner} portion(er)*")
 
-        st.markdown("<div class='sektion-rubrik'>Ingredienser</div>", unsafe_allow_html=True)
+        st.markdown("**Ingredienser**")
         ingrediens_lista = "\n".join([f"- {ing}" for ing in ingredienser])
         st.markdown(ingrediens_lista)
 
-        st.markdown("<div class='sektion-rubrik'>Gör så här</div>", unsafe_allow_html=True)
+        st.markdown("**Gör så här**")
         st.markdown(instruktioner)
-
-        st.markdown("</div>", unsafe_allow_html=True)
     else:
         st.info("Tryck på knappen för att slumpa fram ett nytt recept.")
+
 
 
 
